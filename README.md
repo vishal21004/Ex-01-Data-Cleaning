@@ -19,120 +19,102 @@ Remove the null values from the data
 Save the Clean data to the file
 
 # CODE
-# CODE FOR DATA SET 1:
 ```
-import pandas as pd
-df=pd.read_csv("Data_set.csv")
-df.head(5)
-
-df.info()
-
-df.isnull()
-
-df.isnull().sum()
-
-df['show_name']=df['show_name'].fillna(df['aired_on'].mode()[0])
-df['aired_on']=df['aired_on'].fillna(df['aired_on'].mode()[0])
-df['original_network']=df['original_network'].fillna(df['aired_on'].mode()[0])
-df.head()
-
-df['rating']df['rating'].fillna(df['rating'].mean())
-df['current_overall _rank']=df['current_overall_rank'].fillna(df['current_overall_rank'].mean())
-df.head()
-
-df['watchers']=df['watchers'].fillna(df['watchers'].median())
-df.head()
-
-df.info()
-
-df.isnull().sum()
-
-```
-### output 1:
-Data
-
-![output](./dur.1.png)
-![output](./dur.2.png)
-![output](./dur.3.png)
-
-
-NON NULL BEFORE:
-![output](./dur.4.png)
-MODE:
-![output](./dur.5.png)
-MEAN:
-![output](./dur.6.png)
-MEDIAN:
-![output](./dur.7.png)
-![output](./dur.8.png)
-NON NULL AFTER:
-![output](./dur.9.png)
-##### CODE FOR DATA SET2:
-
-## CODE FOR DATA 2:
-```
-import pandas as pd
+/* 
+Name : M.A.Vishal
+Register Number : 212222230177
+**Data Cleaning - Data_set.csv**
 import numpy as np
-import seaborn as sns
-d = pd.read_csv("/content/Loan_data.csv")
-d
-d.head()
-d.describe()
-d.tail()
-d.isnull().sum()
-d.shape
-d.columns
-d.duplicated
+import pandas as pd
+import seaborn as sbn
+df = pd.read_csv("/content/Data_set.csv")
+print(df)
+df.head(10)
+df.info()
+df.isnull()
+df.isnull().sum()
+df['show_name'] = df['show_name'].fillna(df['aired_on'].mode()[0])
+df['aired_on'] = df['aired_on'].fillna(df['aired_on'].mode()[0])
+df['original_network'] = df['original_network'].fillna(df['aired_on'].mode()[0])
+df.head()
+df['rating'] = df['rating'].fillna(df['rating'].mean())
+df['current_overall_rank'] = df['current_overall_rank'].fillna(df['current_overall_rank'].mean())
+df.head()
+df['watchers'] = df['watchers'].fillna(df['watchers'].median())
+df.head()
+df.info()
+df.isnull().sum()
 
-#Using mode method to fill the data in columns as Object(String)
-#mode()[0] - Takes the most reccuring value and fills the empty cells
-d['Gender'] = d['Gender'].fillna(d['Gender'].mode()[0])
-d['Dependents'] = d['Dependents'].fillna(d['Dependents'].mode()[0])
-d['Self_Employed'] = d['Self_Employed'].fillna(d['Self_Employed'].mode()[0])
-
-#Using mean method to fill the data
-d['LoanAmount'] = d['LoanAmount'].fillna(d['LoanAmount'].mean())
-d['Loan_Amount_Term'] = d['Loan_Amount_Term'].fillna(d['Loan_Amount_Term'].mean())
-d['Credit_History'] = d['Credit_History'].fillna(d['Credit_History'].mean())
-
-sns.boxplot(y="LoanAmount",data=d)
-
-#Checking the total no.of null values again
-d.isnull().sum()
-
-#Checking info of the dataset to check all the columns have entries
-d.info()
+**Data Cleannig - Loan_data.csv**
+data = pd.read_csv("/content/Loan_data.csv")
+print(data)
+data.head(5)
+data.isnull()
+data.isnull().sum()
+data['Gender'] = data["Gender"].fillna(data['Gender'].mode()[0])
+data['Dependents'] = data["Dependents"].fillna(data['Dependents'].mode()[0])
+data['Self_Employed'] = data["Self_Employed"].fillna(data['Self_Employed'].mode()[0])
+data['Credit_History'] = data["Credit_History"].fillna(data['Credit_History'].mode()[0])
+data.head()
+data['LoanAmount']=data['LoanAmount'].fillna(data['LoanAmount'].median())
+data.head()
+data['Loan_Amount_Term']=data['Loan_Amount_Term'].fillna(data['Loan_Amount_Term'].mean())
+data.head()
+data.info()
+data.isnull().sum()
+*/
 ```
+# OUPUT
+## Data Cleaning - Data_set.csv
+![data set 1](https://user-images.githubusercontent.com/127843647/227855015-cee6a94f-187b-41e5-9b67-4fbb655d58e7.jpeg)
+
+## Before Cleaning
+
+![data set 2](https://user-images.githubusercontent.com/127843647/227855058-9f0e9586-0d54-4ef0-8ecf-fd39a281cdf6.jpeg)
+![data set3](https://user-images.githubusercontent.com/127843647/227855154-35e5ae04-41dc-4181-a5e2-04f57cd0487d.jpeg)
+![data set 4](https://user-images.githubusercontent.com/127843647/227855186-797e5ccd-dd74-4a62-815f-69b17ecc1916.jpeg)
+
+## Mode
+
+![data set mode](https://user-images.githubusercontent.com/127843647/227855718-72d2e18e-ccef-4627-b8c7-b8338caba6de.jpeg)
+
+## Mean
+![data set mean](https://user-images.githubusercontent.com/127843647/227855754-09f13a21-ed5b-4f47-99d3-bc56ba44e414.jpeg)
 
 
+## Median
+![data  set median](https://user-images.githubusercontent.com/127843647/227855776-53ef4188-5c09-41b3-a9c5-d24c3d268803.jpeg)
+
+## After Cleaning
+![data set after cleaning](https://user-images.githubusercontent.com/127843647/227855806-abf49fa6-2141-49bf-b9c5-d8c5b742dcef.jpeg)
 
 
+## Data Cleaning - Loan_data.csv
+![loan data 1](https://user-images.githubusercontent.com/127843647/227855851-7a07603e-93bd-45f6-ae23-09ed6895918f.jpeg)
 
 
+## Before Cleaning
+![loan data 2](https://user-images.githubusercontent.com/127843647/227855939-d3e30ab5-27f3-459a-88be-366789bbcb39.jpeg)
+![loan data 3](https://user-images.githubusercontent.com/127843647/227855976-1936afba-d65a-4239-bec8-f7526d138a5d.jpeg)
+![loan data 4](https://user-images.githubusercontent.com/127843647/227855995-ab951c62-72ea-44ea-afc7-f3eb062d6b26.jpeg)
 
-### OUTPUT FOR DATASET 2:
-### DATA:
-
-![output](./dur.10.png)
-![output](./dur.11.png)
-![output](./dur.12.png)
-### NULL BEFORE:
-
-![output](./dur.13.png)
-
-### MODE:
-
-![output](./dur.14.png)
-
-### MEDIAN:
-![output](./dur.15.png)
-
-![output](./dur.16.png)
-
-### NON NULL AFTER:
-![output](./dur.17.png)
+## Mode
+![loan data mode](https://user-images.githubusercontent.com/127843647/227856030-f32b965e-2073-4cf2-bd12-8198fb9c4eb9.jpeg)
 
 
-### RESULT:
-Thus the given data is read,cleansed and cleaned data is saved into the file.
+## Mean
+
+![loan data mean ](https://user-images.githubusercontent.com/127843647/227856052-383a12e4-62dc-4425-8831-a032e488c04c.jpeg)
+
+## Median
+
+![loan data median](https://user-images.githubusercontent.com/127843647/227856080-7d73d6db-4860-41ae-b074-04da648708b1.jpeg)
+
+## After Cleaning
+
+![loan data 6](https://user-images.githubusercontent.com/127843647/227856225-2fcddba3-edcd-43fb-8de6-216cb21430a0.jpeg)
+ 
+# RESULT
+Thus the given data is read, cleansed and the cleaned data is saved into the file.
+
 
